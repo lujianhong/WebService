@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://sendmail/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SendMailInterface" targetNamespace="http://sendmail/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://sendmail/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="sendEmail" type="tns:sendEmail" />
+      <xs:element name="sendEmailBatch" type="tns:sendEmailBatch" />
+      <xs:element name="sendEmailBatchResponse" type="tns:sendEmailBatchResponse" />
+      <xs:element name="sendEmailResponse" type="tns:sendEmailResponse" />
+      <xs:element name="validateEmailAddress" type="tns:validateEmailAddress" />
+      <xs:element name="validateEmailAddressResponse" type="tns:validateEmailAddressResponse" />
+      <xs:complexType name="sendEmail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="url" type="xs:string" />
+          <xs:element minOccurs="0" name="payload" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendEmailResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validateEmailAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="email" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validateEmailAddressResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendEmailBatch">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="url" type="xs:string" />
+          <xs:element minOccurs="0" name="payload" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendEmailBatchResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="sendEmail">
+    <wsdl:part name="parameters" element="tns:sendEmail" />
+  </wsdl:message>
+  <wsdl:message name="validateEmailAddressResponse">
+    <wsdl:part name="parameters" element="tns:validateEmailAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendEmailResponse">
+    <wsdl:part name="parameters" element="tns:sendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="validateEmailAddress">
+    <wsdl:part name="parameters" element="tns:validateEmailAddress" />
+  </wsdl:message>
+  <wsdl:message name="sendEmailBatch">
+    <wsdl:part name="parameters" element="tns:sendEmailBatch" />
+  </wsdl:message>
+  <wsdl:message name="sendEmailBatchResponse">
+    <wsdl:part name="parameters" element="tns:sendEmailBatchResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SendMailInterface">
+    <wsdl:operation name="sendEmail">
+      <wsdl:input name="sendEmail" message="tns:sendEmail" />
+      <wsdl:output name="sendEmailResponse" message="tns:sendEmailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="validateEmailAddress">
+      <wsdl:input name="validateEmailAddress" message="tns:validateEmailAddress" />
+      <wsdl:output name="validateEmailAddressResponse" message="tns:validateEmailAddressResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendEmailBatch">
+      <wsdl:input name="sendEmailBatch" message="tns:sendEmailBatch" />
+      <wsdl:output name="sendEmailBatchResponse" message="tns:sendEmailBatchResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SendMailInterfaceSoapBinding" type="tns:SendMailInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sendEmail">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="sendEmail">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendEmailResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateEmailAddress">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="validateEmailAddress">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="validateEmailAddressResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendEmailBatch">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="sendEmailBatch">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendEmailBatchResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SendMailInterface">
+    <wsdl:port name="SendMailPort" binding="tns:SendMailInterfaceSoapBinding">
+      <soap:address location="http://localhost:8888/Webservice" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

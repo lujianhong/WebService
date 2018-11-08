@@ -1,0 +1,10 @@
+D:\代码\WebService_Client\WebService_Client\bin\Debug\WebService_Client.exe.config
+D:\代码\WebService_Client\WebService_Client\bin\Debug\WebService_Client.exe
+D:\代码\WebService_Client\WebService_Client\bin\Debug\WebService_Client.pdb
+D:\代码\WebService_Client\WebService_Client\obj\Debug\WebService_Client.csprojResolveAssemblyReference.cache
+D:\代码\WebService_Client\WebService_Client\obj\Debug\WebService_Client.Form1.resources
+D:\代码\WebService_Client\WebService_Client\obj\Debug\WebService_Client.Properties.Resources.resources
+D:\代码\WebService_Client\WebService_Client\obj\Debug\WebService_Client.csproj.GenerateResource.Cache
+D:\代码\WebService_Client\WebService_Client\obj\Debug\WebService_Client.csproj.CoreCompileInputs.cache
+D:\代码\WebService_Client\WebService_Client\obj\Debug\WebService_Client.exe
+D:\代码\WebService_Client\WebService_Client\obj\Debug\WebService_Client.pdb
